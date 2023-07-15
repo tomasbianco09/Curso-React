@@ -7,7 +7,7 @@ const App = () => {
     <>
       <NavBar/>
       <ItemListContainer
-      greeting="Bienvenidos a mi tienda"
+      greeting="Bienvenidos a Noir Store"
       />
     </>
   )

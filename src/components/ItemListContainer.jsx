@@ -2,8 +2,8 @@ import React from 'react'
 
 const ItemListContainer = ({greeting}) => {
   return (
-    <div>
-        <p>{greeting}</p>
+    <div className='saludo'>
+      <p>{greeting}</p>
     </div>
   )
 }

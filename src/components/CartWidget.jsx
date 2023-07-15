@@ -1,4 +1,3 @@
-import { SunIcon } from '@chakra-ui/icons'
 import { Box, Flex, Spacer } from '@chakra-ui/react'
 import React from 'react'
 
@@ -6,7 +5,7 @@ const CartWidget = () => {
   return (
     <Flex>
         <Box>
-        <SunIcon />
+        <span className="material-symbols-outlined"> shopping_cart </span>
         </Box>
         <Spacer/>
         <Box>
