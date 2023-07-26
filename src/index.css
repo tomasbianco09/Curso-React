@@ -2,3 +2,99 @@
     text-align: center;
     font-size: 2rem;
 }
+
+.contenedor {
+    width: 80%;
+    height: 100%;
+    padding-top: 15px;
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.card {
+    transition-duration: 0.2s;
+    width: 316px;
+    height: 30rem;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid #c2bdbd;
+    border-radius: 5px;
+    /* box-shadow: 0 0 7px rgba(0, 0, 0, 0.8);  */
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card .product-info p {
+    font-size: 18px;
+    padding: 0 25px;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.card .product-image {
+    width: 330px;
+    margin: 20px auto; 
+}
+
+.card .product-image img {
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.hover-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.product-image:hover img{
+    opacity: 0;
+}
+
+.product-image:hover img.hover-img {
+    opacity: 1;
+    width: 330px;
+    height: 330px;
+    margin: 20px 0 0 0; 
+}
+
+/* .card .product-image img:hover {
+    transform: scale(1.1); 
+} */
+
+.card .product-info h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0 25px;
+    margin-top: 20px;
+}
+
+.card .btn-p {
+    width: 100%; 
+    text-decoration: none;
+}
+
+.btn-p .button {
+    width: 100%;
+    padding: 10px;
+    background: #c2c5aa;
+    border: 1px solid #c2c5aa;
+    outline: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 0 0 15px 15px; 
+}
+
+.btn-p .button:hover {
+    background-color: rgba(194, 197, 170, 0.5);
+    color: #000; 
+}
