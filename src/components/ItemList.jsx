@@ -5,17 +5,21 @@ import { Container } from "@chakra-ui/react"
 const ItemList = ({productos}) => {
   return (
     <>
-      <Container>
-        {productos.map((producto) => (
-          <Item
-            nombre={producto.nombre}
-            description={producto.description}
-            stock={producto.stock}
-          />
-        ))}
-      </Container>
+      
+        {productos.map((producto) => {
+          return (
+
+              <Item
+                key={producto.id}
+                nombre={producto.nombre}
+                description={producto.description}
+                stock={producto.stock}
+              />
+          
+          )
+        })}
     </>
-  );
+  )
 }
 
 export default ItemList

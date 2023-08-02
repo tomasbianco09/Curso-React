@@ -1,9 +1,4 @@
-.saludo {
-    text-align: center;
-    font-size: 2rem;
-}
-
-.contenedor {
+.container-lg {
     width: 80%;
     height: 100%;
     padding-top: 15px;
@@ -21,7 +16,7 @@
     height: 30rem;
     overflow: hidden;
     text-align: center;
-    border: 1px solid #c2bdbd;
+    border: 1px solid #c2c5aa; 
     border-radius: 5px;
     /* box-shadow: 0 0 7px rgba(0, 0, 0, 0.8);  */
 }
@@ -78,11 +73,18 @@
 }
 
 .card .btn-p {
-    width: 100%; 
-    text-decoration: none;
+    width: 100%;
+    padding: 10px;
+    background: #f3f6db;
+    border: 1px solid #c2c5aa;
+    outline: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
 }
 
-.btn-p .button {
+/* .btn-p .button {
     width: 100%;
     padding: 10px;
     background: #c2c5aa;
@@ -91,8 +93,8 @@
     color: rgb(0, 0, 0);
     cursor: pointer;
     font-size: 20px;
-    border-radius: 0 0 15px 15px; 
-}
+    border-radius: 0 0 15px 15px;
+} */
 
 .btn-p .button:hover {
     background-color: rgba(194, 197, 170, 0.5);
