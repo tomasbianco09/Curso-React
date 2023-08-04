@@ -1,6 +1,6 @@
 import React from 'react'
 import { Menu, Container, MenuButton, Button, MenuList, MenuItem, Flex, Box, Spacer } from "@chakra-ui/react"
-import { ChevronDownIcon} from '@chakra-ui/icons'
+import { ChevronDownIcon } from '@chakra-ui/icons'
 import { Link } from 'react-router-dom'
 import CartWidget from './CartWidget'
 
@@ -11,7 +11,7 @@ const NavBar = () => {
       <Flex>
         <Box p="4" fontSize="1.5rem" color="black">
           <Link to={"/"}>
-          Noir Store
+            Noir Store
           </Link>
         </Box>
         <Spacer />
@@ -22,19 +22,19 @@ const NavBar = () => {
             </MenuButton>
             <MenuList>
               <MenuItem>
-              <Link to={`/category/${'cat1'}`}>
-              Remeras
-              </Link>
+                <Link to={`/category/${'cat1'}`}>
+                  Remeras
+                </Link>
               </MenuItem>
               <MenuItem>
-              <Link to={`/category/${'cat2'}`}>
-              Remeras
-              </Link>
+                <Link to={`/category/${'cat2'}`}>
+                  Buzo
+                </Link>
               </MenuItem>
               <MenuItem>
-              <Link to={`/category/${'cat3'}`}>
-              Accesorios
-              </Link>
+                <Link to={`/category/${'cat3'}`}>
+                  Accesorios
+                </Link>
               </MenuItem>
             </MenuList>
           </Menu>

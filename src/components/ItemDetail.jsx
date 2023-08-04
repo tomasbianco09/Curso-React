@@ -1,29 +1,30 @@
 import React from 'react';
-import { useParams} from 'react-router-dom';
-import { Card, CardHeader, Heading, CardBody, Text, CardFooter, Button, Flex } from '@chakra-ui/react'
+import ItemCount from './ItemCount'
+import { useParams } from 'react-router-dom';
+import { } from '@chakra-ui/react'
+
 const ItemDetail = ({ productos }) => {
     const { id } = useParams();
 
-    const productoFilter = productos.filter((producto) => producto.id == id)
+    const filteredProducts = productos.filter((producto) => producto.id == id)
 
     return (
         <div>
-            {productoFilter.map((producto) => {
+            {filteredProducts.map((producto) => {
                 return (
                     <div key={producto.id}>
-                        <Flex>
-                            <Card>
-                                <CardHeader>
-                                    <Heading size='md'>{producto.nombre}</Heading>
-                                </CardHeader>
-                                <CardBody>
-                                    <Text>{producto.description}</Text>
-                                </CardBody>
-                                <CardFooter>
-                                    <Button>{producto.category}</Button>
-                                </CardFooter>
-                            </Card>
-                        </Flex>
+                        <div className="container-lg">
+                            <div className='card'>
+                                <div className='product-image'></div>
+                                <div className='product-info'>
+                                    <h4>{producto.nombre}</h4>
+                                    <p>{producto.description}</p>
+                                </div>
+                                <div>
+                                    <ItemCount stock={producto.stock} initial={1} />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 )
             })}

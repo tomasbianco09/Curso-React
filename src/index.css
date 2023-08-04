@@ -43,7 +43,7 @@
 
 }
 
-.hover-img {
+/* .hover-img {
     position: absolute;
     left: 0;
     top: 0;
@@ -59,7 +59,7 @@
     width: 330px;
     height: 330px;
     margin: 20px 0 0 0; 
-}
+} */
 
 /* .card .product-image img:hover {
     transform: scale(1.1); 
@@ -100,3 +100,39 @@
     background-color: rgba(194, 197, 170, 0.5);
     color: #000; 
 }
+
+/* Inicio ItemCount CSS */
+
+.buttons-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: green;  
+
+}
+.buttons-cart Button{
+
+    font-size: 1.3rem;
+    font-weight: 700;
+    border: none;
+    background-color: whitesmoke;
+    margin-left: .3rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+}
+.buttons-cart p{
+    padding: 0;
+    margin: 0;
+}
+.buttons-cart h4{
+    margin-left: .8rem;
+}
+.buttons-add-cart Button{
+    width: 95%;
+    margin-bottom: .4rem;
+}
+
+/* Fin ItemCount CSS */
