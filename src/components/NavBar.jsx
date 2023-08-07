@@ -23,17 +23,17 @@ const NavBar = () => {
             <MenuList>
               <MenuItem>
                 <Link to={`/category/${'cat1'}`}>
-                  Remeras
+                Buzo
                 </Link>
               </MenuItem>
               <MenuItem>
                 <Link to={`/category/${'cat2'}`}>
-                  Buzo
+                  Remeras
                 </Link>
               </MenuItem>
               <MenuItem>
                 <Link to={`/category/${'cat3'}`}>
-                  Accesorios
+                  Pantaloes
                 </Link>
               </MenuItem>
             </MenuList>

@@ -1,18 +1,28 @@
 # Proyecto de React
 ## Tomas Bianco
 ### Comision 47120
+### Noir Store
 
-Venimos trabajando con los primeros componentes del proyecto, en este caso armamos el NavBar de la pagina, trabajando con 3 componentes.
-1. NavBar
-1. CartWidget
-1. ItemListContainer
+#### De que se trata NoirStore?
+Noir Store es un proyecto de estudio de React JS en CoderHouse, se trata de un ecommerce enfocado en la venta de ropa, con items filtrados por categoria.
 
-En el primer componente completamos los datos de el brand de la pagina, sus categorias e incluimos el carrito.
+#### Preview: 
+![GifTechVibes](./src/assets/NoirStore.gif)
 
-En el segundo componente armamos lo que seria el logo del carrito con un nunmero hardcodeado simulando una cantidad X de productos en el.
+### Objetivos.
 
-En el tercer y ultimo componente creamos un contenedor con un greeting como contenido, este mostrando un mensaje de bienvenida.
+* Deberás desarrollar la navegabilidad básica de la aplicación, demostrando que la app permite ver el catálogo, y navegar a un detalle.
 
+
+### Consignas a entregar:
+##### Rutas a configurar
+* ‘/’ navega a 'ItemListContainer' ✔
+* ‘/category/:id’  'ItemListContainer' ✔
+* ‘/item/:id’ navega a 'ItemDetailContainer' ✔
+##### Links a configurar
+* Clickear en el brand debe navegar a ‘/’ ✔
+* Clickear un Item.js debe navegar a /item/:id ✔
+* Clickear en una categoría del navbar debe navegar a /category/:categoryId ✔
 
 
 [Linkedin](https://www.linkedin.com/in/facundo-bianco-2625ab248/)

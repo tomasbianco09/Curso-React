@@ -1,4 +1,5 @@
 .container-lg {
+    font-family: 'Open Sans', sans-serif;
     width: 80%;
     height: 100%;
     padding-top: 15px;
@@ -16,10 +17,10 @@
     height: 30rem;
     overflow: hidden;
     text-align: center;
-    border: 1px solid #c2c5aa; 
+    border: 0.2px solid rgb(205, 205, 205);
     border-radius: 5px;
-    /* box-shadow: 0 0 7px rgba(0, 0, 0, 0.8);  */
-}
+    /* box-shadow: 0 0 1px rgba(0, 0, 0, 0.8); */
+} 
 
 .card:hover {
     transform: scale(1.02);
@@ -101,6 +102,30 @@
     color: #000; 
 }
 
+/* Inicio Home */
+
+.titleHome {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    height: 500px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; 
+}
+
+.titleHome h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-top: 80px;
+    color: #000000;
+    letter-spacing: -.02em;
+}
+
 /* Inicio ItemCount CSS */
 
 .buttons-cart{
@@ -110,7 +135,7 @@
     width: 100%;
     margin-top: 10px;
     margin-bottom: 20px;
-    color: green;  
+    color: black;  
 
 }
 .buttons-cart Button{

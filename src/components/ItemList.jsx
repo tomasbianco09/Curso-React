@@ -7,14 +7,14 @@ const ItemList = ({ productos }) => {
 
       {productos.map((producto) => {
         return (
-          <Item
-            key={producto.id}
-            id={producto.id}
-            nombre={producto.nombre}
-            description={producto.description}
-            stock={producto.stock}
-            category={producto.category}
-          />
+            <Item
+              key={producto.id}
+              id={producto.id}
+              nombre={producto.nombre}
+              description={producto.description}
+              stock={producto.stock}
+              category={producto.category}
+            />
         )
       })
       }
