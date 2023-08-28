@@ -91,7 +91,7 @@ const Cart = () => {
               <p>Tax (21%)</p>
               <p>Total: ${totalConImpuesto.toFixed(2)}</p>
             </div>
-            <Link to={`/sendorder`}>
+            <Link to={`/checkout`}>
               <button className="checkout-btn">
                 <span className="button_lg">
                   <span className="button_sl"></span>

@@ -7,7 +7,7 @@ import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
-const SendOrder = () => {
+const Checkout = () => {
     const [cart, setCart, clearCart, totalCompra, impuesto, totalConImpuesto] = useContext(CartContext)
     const [name, setName] = useState("")
     const [last, setLast] = useState("")
@@ -208,4 +208,4 @@ const SendOrder = () => {
     )
 }
 
-export default SendOrder
+export default Checkout

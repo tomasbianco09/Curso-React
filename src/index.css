@@ -315,11 +315,12 @@
 .card {
     transition-duration: 0.2s;
     width: 316px;
-    height: 31rem;
+    height: 29rem;
     overflow: hidden;
     text-align: center;
     border: 0.2px solid rgb(205, 205, 205);
     border-radius: 5px;
+    margin: 5px;
 } 
 
 .card:hover {
@@ -328,13 +329,12 @@
 
 .card .product-info p {
     font-size: 18px;
-    padding: 0 25px;
-    margin-top: 1rem;
+    margin-top: 0.3rem;
     font-weight: 500;
 }
 
 .card .product-image {
-    width: 310px;
+    width:310px;
     margin: 20px auto; 
 }
 
@@ -345,16 +345,14 @@
 }
 
 .card .product-info h4 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
-    padding: 0 25px;
-    margin-top: 20px;
 }
 
 .card .btn-p {
     width: 100%;
     padding: 10px;
-    margin-top: 1.8rem;
+    margin-top: 0.5rem;
     background: #010101;
     outline: none; 
     cursor: pointer;
@@ -454,7 +452,12 @@
     font-size: 1rem;
     text-align: center;
     font-weight: 700;
-    margin: 20px 0 0 0;
+    margin: 1rem 0 1rem 0 ;
+}
+.product-details p {
+    margin-top: 1rem;
+    text-align: justify;
+    font-weight: 400;
 }
 
 .btn-p .button:hover {
@@ -576,13 +579,17 @@
 .cart-total {
     width: 316px;
     height: 220px;
-    padding: 20px 20px 0px 20px;
-    border-radius: 1px;
-    border: 1px solid black;
+    margin: 0 auto auto auto;
 }
 
-.cart-total p {
+.valores-total {
+    margin-bottom: 3.6rem;
+}
+
+.valores-total p {
     margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 /* Boton Vaciar Carrito */ 
@@ -617,8 +624,7 @@
     font-weight: bold;
     font-size: 14px;
     transition: all .15s ease;
-
-    margin: 10px 0 0 0;
+    margin: 20px 0 0 0;
 }
 
 .checkout-btn::before,
@@ -837,9 +843,9 @@
 .cart-total {
     width: 316px;
     height: 220px;
-    padding: 20px 20px 0px 20px;
-    border-radius: 1px;
-    border: 1px solid black;
+    /* padding: 20px 20px 0px 20px; */
+    border-radius: 5px;
+    /* border: 1px solid rgb(0, 0, 0); */
 }
 
 .cart-total p {
@@ -1007,7 +1013,7 @@
 
 .cart-total {
     width: 350px;
-    margin: auto;
+    margin: 0 auto auto auto;
 }
 
 .cart-total p {
@@ -1136,7 +1142,8 @@
 
 .cart-total {
     width: 350px;
-    margin: auto;
+    margin: 0 auto auto auto;
+
 
     font-size: 0.9rem;
 }

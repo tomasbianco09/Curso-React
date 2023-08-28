@@ -7,7 +7,7 @@ import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Footer from './components/Footer'
 import { CartProvider } from './context/CartProvider'
-import SendOrder from './components/SendOrder'
+import Checkout from './components/Checkout'
 
 const App = () => {
 
@@ -23,7 +23,7 @@ const App = () => {
           <Route exact path="/category/" element={<ItemListContainer />} />
           <Route exact path="/category/:category" element={<ItemListContainer />} />
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
-          <Route exact path="/sendorder/" element={<SendOrder />} />
+          <Route exact path="/checkout/" element={<Checkout />} />
 
         </Routes>
         <Footer/>
