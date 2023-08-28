@@ -5,25 +5,16 @@ import { Button, ButtonGroup, IconButton } from '@chakra-ui/react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 
 const Cart = () => {
-  const [cart, setCart, clearCart] = useContext(CartContext);
-
-  const totalCompra = cart.reduce((acc, item) => acc + (item.precio * item.quantity),0);
-
-  const calcularImpuestos = (totalCompra) => {
-    return totalCompra * 0.21; 
-  };
-
-  const impuesto = calcularImpuestos(totalCompra);
-  const totalConImpuesto = totalCompra + impuesto
+  const [cart, setCart, clearCart, totalCompra, impuesto, totalConImpuesto] = useContext(CartContext);
 
   if (cart.length === 0) {
     return (
       <div className='no-items'>
-        <h1>No hay productos en el carrito!</h1>
+        <h1>Your cart seems empty</h1>
 
         <Link to='/' className='Option'>
           <button>
-            Seguir comprando
+            Continue shopping
           </button>
         </Link>
       </div>
@@ -62,7 +53,7 @@ const Cart = () => {
   return (
     <>
       <section className="tittleCart">
-        <h2>SU CARRITO</h2>
+        <h2>YOUR CART</h2>
       </section>
       <div className="container-lg">
         <div className="cart-view">
@@ -74,12 +65,12 @@ const Cart = () => {
                     <img src={item.image} alt="Producto" />
                     <div className="item-details">
                       <h4>{item.nombre}</h4>
-                      <p>Precio: ${item.precio}</p>
-                      <p>Cantidad: {item.quantity}</p>
+                      <p>Price: ${item.precio}</p>
+                      <p>Quantity: {item.quantity}</p>
                     </div>
                     <ButtonGroup className='botones-cart' size='sm' isAttached variant='outline'>
                       <IconButton aria-label='Add to friends' onClick={() => decreaseQuantity(item)} icon={<MinusIcon />} />
-                      <Button onClick={() => removeItem(item.id)}>Eliminar</Button>
+                      <Button onClick={() => removeItem(item.id)}>Delete</Button>
                       <IconButton aria-label='Add to friends' onClick={() => increaseQuantity(item)} icon={<AddIcon />} />
                     </ButtonGroup>
                   </li>
@@ -90,21 +81,21 @@ const Cart = () => {
             <button className="checkout-btn">
               <span className="button_lg">
                 <span className="button_slv"></span>
-                <span className="button_text" onClick={(clearCart)}>Vaciar carrito</span>
+                <span className="button_text" onClick={(clearCart)}>Clear cart</span>
               </span>
             </button>
           </div>
           <div className="cart-total">
             <div className="valores-total">
               <p>Subtotal: ${totalCompra}</p>
-              <p>Impuesto (21%)</p>
+              <p>Tax (21%)</p>
               <p>Total: ${totalConImpuesto.toFixed(2)}</p>
             </div>
             <Link to={`/sendorder`}>
               <button className="checkout-btn">
                 <span className="button_lg">
                   <span className="button_sl"></span>
-                  <span className="button_text">Finalizar pedido</span>
+                  <span className="button_text">Checkout</span>
                 </span>
               </button>
             </Link>

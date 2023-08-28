@@ -22,14 +22,14 @@ const ItemDetail = ({ ropa }) => {
         });
     }, []);
 
-    const filteredProducts = ropa.filter((producto) => producto.id == id);
+    const filteredProducts = ropa.filter((producto) => producto.id == id)
 
     return (
         <div>
             {filteredProducts.map((producto) => {
                 return (
                     <div key={producto.id}>
-                        <div className="container-lg">
+                        <div className="container-detail">
                             <div className='cardDetailImg'>
                                 <img src={producto.image} alt="Producto 1" />
                             </div>
@@ -43,7 +43,8 @@ const ItemDetail = ({ ropa }) => {
                                 </div>
                                 <hr />
                                 <div className='product-details'>
-                                    <h4>DETALLES DEL PRODUCTO</h4>
+                                    <h4>PRODUCT DETAILS</h4>
+                                    <p>{producto.description}</p>
                                 </div>
                             </div>
                         </div>

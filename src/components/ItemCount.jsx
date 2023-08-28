@@ -44,7 +44,7 @@ const ItemCount = ({ initial, precio, stock, id, description, nombre, image }) =
   return (
     <div>
       <div className="buttons-cart">
-        <p>Stock disponible: </p>
+        <p>Available stock: </p>
         <h4 className="text-center">{stock}</h4>
       </div>
       <div className='buttons-cart'>
@@ -52,7 +52,7 @@ const ItemCount = ({ initial, precio, stock, id, description, nombre, image }) =
           -
         </button>
         <button className="bg-success mb-3 me-3 "size="sm" onClick={() => { addToCart() }}> 
-          Agregar {quantity}
+          Add to cart {quantity}
         </button>
         <button variant="outline-secondary " size="sm" onClick={increment}>
           +
@@ -60,7 +60,7 @@ const ItemCount = ({ initial, precio, stock, id, description, nombre, image }) =
       </div>
       <Link to={"/cart"}>
         <button className='btnCart' variant="outline-primary ">
-          <h3>Ver Carrito</h3>
+          <h3>View Cart</h3>
         </button>
       </Link>
     </div>

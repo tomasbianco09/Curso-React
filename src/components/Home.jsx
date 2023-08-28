@@ -10,7 +10,7 @@ const Home = () => {
       <div className='home'>
         <div className="titleHome">
           <h1>WE ARE NOIR</h1>
-          <p>Te presentamos algunos de nuestros ejemplos mas buscados para implementar en tu hogar.</p>
+          <p>Wear your passion, play in style: Noir, your favorite eSports store!</p>
         </div>
         <div className="wave">
           <svg className='svgSty' viewBox="0 0 400 100" preserveAspectRatio="none">
@@ -21,7 +21,7 @@ const Home = () => {
         <div className="scrol"></div>
       </div>
       <section className="tittleP">
-        <h2>COLECTIONS</h2>
+        <h2>COLLECTIONS</h2>
       </section>
       <div className="contenedor-colecciones">
         <div className="productsImg">

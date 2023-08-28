@@ -2,7 +2,7 @@ import React from 'react'
 import { Card } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
-const Item = ({ nombre, description, id, image }) => {
+const Item = ({ nombre, description, id, image, precio }) => {
     return (
         <>
             <Card margin='5px'>
@@ -12,11 +12,11 @@ const Item = ({ nombre, description, id, image }) => {
                     </div>
                     <div className='product-info'>
                         <h4>{nombre}</h4>
-                        <p>{description}</p>
+                        <p>$ {precio}</p>
                     </div>
                     <Link to={`/item/${id}`}>
                         <button className='btn-p'>
-                            <h2>Detalles</h2>
+                            <h2>Details</h2>
                         </button>
                     </Link>
                 </div>

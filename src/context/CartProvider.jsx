@@ -5,6 +5,15 @@ export const CartContext = createContext(null)
 export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([])
 
+    const totalCompra = cart.reduce((acc, item) => acc + (item.precio * item.quantity), 0);
+
+    const calcularImpuestos = (totalCompra) => {
+        return totalCompra * 0.21;
+    };
+
+    const impuesto = calcularImpuestos(totalCompra);
+    const totalConImpuesto = totalCompra + impuesto
+
     const clearCart = () => {
         setCart([])
     };
@@ -24,7 +33,7 @@ export const CartProvider = ({children}) => {
 
     return(
 
-        <CartContext.Provider value={[cart, setCart, clearCart]}>
+        <CartContext.Provider value={[cart, setCart, clearCart, totalCompra, impuesto, totalConImpuesto ]}>
             {children}
         </CartContext.Provider>
     )

@@ -8,6 +8,7 @@ import Loading from './Loading'
 
 const ItemListContainer = () => {
   const { category } = useParams()
+
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
