@@ -1,45 +1,53 @@
 import React from 'react'
 import ItemList from './ItemList'
-import { SimpleGrid, Flex } from '@chakra-ui/react'
 import { useParams } from 'react-router-dom'
+import { useState, useEffect } from "react";
+import { getFirestore, collection, getDocs, query, orderBy } from 'firebase/firestore';
+
+import Loading from './Loading'
 
 const ItemListContainer = () => {
   const { category } = useParams()
-  const productos = [
-    { id: 1, nombre: "BUZO SIMPLE", description: "100%% algodon", stock: 5, category: "cat1" },
-    { id: 2, nombre: "REMERA SIMPLE", description: "100%% algodon", stock: 15, category: "cat2" },
-    { id: 3, nombre: "PANT CARGO", description: "100%% algodon", stock: 8, category: "cat3" },
-    { id: 4, nombre: "BUZO OVERSIZE", description: "100%% algodon", stock: 4, category: "cat1" },
-    { id: 5, nombre: "REMERA OVERSIZE", description: "100%% algodon", stock: 11, category: "cat2" },
-    { id: 6, nombre: "JEAN OVERSIZE", description: "100%% algodon", stock: 16, category: "cat3" },
-  ]
+  const [products, setProducts] = useState([]);
 
-  const getProductos = new Promise((resolve, reject) => {
-    if (productos.length > 0) {
-      setTimeout(() => {
-        resolve(productos)
-      }, 2000)
-    } else {
-      reject(new Error("No hay datos"))
-    }
-  })
+  useEffect(() => {
+    const db = getFirestore();
 
-  getProductos
-    .then((res) => {
-      console.log(res)
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+    const ropaCollection = collection(db, "TEAMS");
+    const orderedQuery  = query(ropaCollection, orderBy("nombre"));
+    getDocs(orderedQuery ).then((snapshot) => {
+      const docs = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setProducts(docs);
+  });
+  }, [])
 
-  const filteredProducts = productos.filter((producto) => producto.category === category)
+  const filteredProducts = products.filter((producto) => producto.category === category)
+
+  // const [loading, setLoading] = useState(true)
+  // const [elementos, setElementos] = useState([])
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setElementos(filteredProducts)
+  //     setLoading(false)
+  //   }, 5000)
+
+  // }, [])
+
+  // if (loading) {
+  //   return <Loading/>
+  // }
 
   return (
-    
-      <Flex>
-        <ItemList productos={filteredProducts} />
-      </Flex>
+    <>
+      <section className="tittleColections">
+        <h2>{category}</h2>
+      </section>
+      <div className="container-lg">
 
+        {category ? <ItemList productos={filteredProducts} /> : <ItemList productos={products} />}
+      </div>
+    </>
   )
 }
 

@@ -5,22 +5,31 @@ import Home from './components/Home'
 import Cart from './components/Cart'
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
-
-
+import Footer from './components/Footer'
+import { CartProvider } from './context/CartProvider'
+import SendOrder from './components/SendOrder'
 
 const App = () => {
 
 
   return (
-    <BrowserRouter>
-      <NavBar/>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/cart" element={<Cart />} />
-        <Route exact path="/category/:category" element={<ItemListContainer />} />
-        <Route exact path="/item/:id" element={<ItemDetailContainer />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <CartProvider>
+        <NavBar/>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/category/" element={<ItemListContainer />} />
+          <Route exact path="/category/:category" element={<ItemListContainer />} />
+          <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+          <Route exact path="/sendorder/" element={<SendOrder />} />
+
+        </Routes>
+        <Footer/>
+        </CartProvider>
+      </BrowserRouter>
+    </>
   )
 }
 

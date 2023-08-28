@@ -1,16 +1,29 @@
 import { Box, Flex, Spacer } from '@chakra-ui/react'
 import React from 'react'
+import { useContext } from "react";
+import { CartContext } from '../context/CartProvider';
+import { Link } from 'react-router-dom'
 
 const CartWidget = () => {
+  const [cart, setCart] = useContext(CartContext);
+
+  const quantity = cart.reduce((acc, current) => {
+    return acc + current.quantity;
+  }, 0);
+
   return (
     <Flex>
-        <Box>
-        <span className="material-symbols-outlined"> shopping_cart </span>
-        </Box>
-        <Spacer/>
-        <Box>
-        <p>5</p>
-        </Box>
+        <Link to={'/cart'} style={{display: quantity > 0 ? 'block' : 'none'}}>
+          <Box>
+          <span className="material-symbols-outlined"> shopping_cart </span>
+          </Box>
+        </Link>
+          <Spacer/>
+
+          <Box style={{display: quantity > 0 ? 'block' : 'none'}}>
+          <p>{quantity}</p>
+          </Box>
+
     </Flex>
   )
 }
