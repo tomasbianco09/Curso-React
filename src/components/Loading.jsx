@@ -2,7 +2,17 @@ import React from 'react'
 
 const Loading = () => {
   return (
-    <div>Loading</div>
+    <div className='loader-box'>
+      <div className="loader">
+        <div className="loader-square"></div>
+        <div className="loader-square"></div>
+        <div className="loader-square"></div>
+        <div className="loader-square"></div>
+        <div className="loader-square"></div>
+        <div className="loader-square"></div>
+        <div className="loader-square"></div>
+      </div>
+    </div>
   )
 }
 

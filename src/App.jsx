@@ -8,6 +8,7 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import Footer from './components/Footer'
 import { CartProvider } from './context/CartProvider'
 import Checkout from './components/Checkout'
+import Cont from './components/Cont'
 
 const App = () => {
 
@@ -24,6 +25,8 @@ const App = () => {
           <Route exact path="/category/:category" element={<ItemListContainer />} />
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route exact path="/checkout/" element={<Checkout />} />
+          <Route exact path="/contact/" element={<Cont />} />
+
 
         </Routes>
         <Footer/>

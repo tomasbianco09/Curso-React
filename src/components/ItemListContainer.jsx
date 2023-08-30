@@ -8,8 +8,11 @@ import Loading from './Loading'
 
 const ItemListContainer = () => {
   const { category } = useParams()
-
+  const [loading, setLoading] = useState(true)
+  const [elementos, setElementos] = useState([])
   const [products, setProducts] = useState([]);
+
+  // Obtener una colección de productos desde Firebase Firestore, ordenarlos alfabéticamente por el nombre y establecer los datos de esos productos en el estado del componente. Los datos se procesan para incluir el ID del documento junto con los datos del producto.
 
   useEffect(() => {
     const db = getFirestore();
@@ -22,22 +25,23 @@ const ItemListContainer = () => {
   });
   }, [])
 
+  // Filtramos cada producto por categoria.
+
   const filteredProducts = products.filter((producto) => producto.category === category)
 
-  // const [loading, setLoading] = useState(true)
-  // const [elementos, setElementos] = useState([])
+  // Aqui cargamos el Loader que se renderiza cuando queremos ver los productos.
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setElementos(filteredProducts)
-  //     setLoading(false)
-  //   }, 5000)
+  useEffect(() => {
+    setTimeout(() => {
+      setElementos(filteredProducts)
+      setLoading(false)
+    }, 3000)
 
-  // }, [])
+  }, [])
 
-  // if (loading) {
-  //   return <Loading/>
-  // }
+  if (loading) {
+    return <Loading/>
+  }
 
   return (
     <>

@@ -3,38 +3,45 @@ import { CartContext } from '../context/CartProvider'
 import { Link } from 'react-router-dom';
 import { Button, ButtonGroup, IconButton } from '@chakra-ui/react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons'
+import Swal from 'sweetalert2';
 
 const Cart = () => {
-  const [cart, setCart, clearCart, totalCompra, impuesto, totalConImpuesto] = useContext(CartContext);
+  const [cart, setCart, totalCompra, impuesto, totalConImpuesto] = useContext(CartContext);
+
+  // Controlamos que cuando el cart este vacio nos muestre una pagina donde nos deje seguir comprando.
 
   if (cart.length === 0) {
     return (
       <div className='no-items'>
-        <h1>Your cart seems empty</h1>
+        <h1>Your cart seems empty!</h1>
 
         <Link to='/' className='Option'>
           <button>
-            Continue shopping
+            <span>Continue shopping</span>
           </button>
         </Link>
       </div>
     )
   }
 
+  // Boton de aumentar cantidades
+
   const increaseQuantity = (item) => {
     const updatedCart = cart.map((cartItem) =>
       cartItem.id === item.id
         ? {
-            ...cartItem,
-            quantity:
-              cartItem.quantity + 1 <= cartItem.stock
-                ? cartItem.quantity + 1
-                : cartItem.quantity,
-          }
+          ...cartItem,
+          quantity:
+            cartItem.quantity + 1 <= cartItem.stock
+              ? cartItem.quantity + 1
+              : cartItem.quantity,
+        }
         : cartItem
     );
     setCart(updatedCart);
   };
+
+  // Boton de disminuir cantidades
 
   const decreaseQuantity = (item) => {
     const updatedCart = cart.map((cartItem) =>
@@ -45,9 +52,29 @@ const Cart = () => {
     setCart(updatedCart);
   };
 
+  // Boton para eliminar item completo
+
   const removeItem = (id) => {
     const updatedCart = cart.filter(item => item.id !== id);
     setCart(updatedCart);
+  };
+
+  // Boton para vaciar el carrito
+
+  const clearCart = () => {
+    Swal.fire({
+      title: 'Clear',
+      text: 'Are you sure you want to clear your cart?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, clear it!',
+      cancelButtonText: 'Cancel',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setCart([]);
+        Swal.fire('Cart Cleared', 'Your cart has been cleared.', 'success');
+      }
+    });
   };
 
   return (
@@ -70,7 +97,7 @@ const Cart = () => {
                     </div>
                     <ButtonGroup className='botones-cart' size='sm' isAttached variant='outline'>
                       <IconButton aria-label='Add to friends' onClick={() => decreaseQuantity(item)} icon={<MinusIcon />} />
-                      <Button onClick={() => removeItem(item.id)}>Delete</Button>
+                      <Button onClick={() => removeItem(item.id)}><h4>Delete</h4></Button>
                       <IconButton aria-label='Add to friends' onClick={() => increaseQuantity(item)} icon={<AddIcon />} />
                     </ButtonGroup>
                   </li>
@@ -78,10 +105,10 @@ const Cart = () => {
                 </ul>
               )
             })}
-            <button className="checkout-btn">
+            <button className="checkout-btn" onClick={(clearCart)}>
               <span className="button_lg">
                 <span className="button_slv"></span>
-                <span className="button_text" onClick={(clearCart)}>Clear cart</span>
+                <span className="button_text">Clear cart</span>
               </span>
             </button>
           </div>

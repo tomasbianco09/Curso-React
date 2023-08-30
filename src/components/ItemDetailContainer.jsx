@@ -4,6 +4,8 @@ import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [data, setData] = useState([]);
+
+  // Obtiene una colección de productos desde Firebase Firestore y establecer los datos de esos productos en el estado del componente. Los datos se procesan para incluir el ID del documento junto con los datos del producto.
   
   useEffect(() => {
     const db = getFirestore();

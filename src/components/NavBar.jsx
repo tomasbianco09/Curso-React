@@ -1,21 +1,29 @@
 import React from 'react'
 import { Flex, Box, Spacer } from "@chakra-ui/react"
 import { useState } from 'react'
-import { SmallCloseIcon } from '@chakra-ui/icons'
-import { Link } from 'react-router-dom'
+import { SmallCloseIcon, ChatIcon, StarIcon } from '@chakra-ui/icons'
+import { Link, NavLink  } from 'react-router-dom'
 import CartWidget from './CartWidget'
+import astralis from '../assets/img/astralis.png'
+import navi from '../assets/img/navi.png'
+import g2 from '../assets/img/g2.webp'
 import brand from '../assets/img/logo.png'
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Esta función cambia el estado del menú entre abierto y cerrado.
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // Esta función se utiliza para forzar el cierre del menú, independientemente de si está abierto o cerrado actualmente.
+
   const closeMenu = () => {
     setMenuOpen(false);
   };
+
   return (
     <div maxw="100%" bg="white" className='nav navbar'>
       <Flex>
@@ -26,37 +34,41 @@ const NavBar = () => {
           </label>
           <ul className="menu__box">
             <li className="textMenu">
-              <Link to={"/"} onClick={closeMenu}>
-                Home
-              </Link>
+              <NavLink to={"/"} onClick={closeMenu}>
+                <StarIcon  w={4} h={4} marginLeft={"10px"} marginBottom={"4px"} /> HOME
+              </NavLink >
             </li>
             <li className="textMenulist ">
-              <Link to={`/category/${''}`} onClick={closeMenu}>
+              <NavLink to={`/category/${''}`} onClick={closeMenu}>
                 <SmallCloseIcon marginLeft={"5px"} /> All Products
-              </Link>
+              </NavLink>
             </li>
             <li className="textMenulist">
-              <Link to={`/category/${'ASTRALIS'}`} onClick={closeMenu}>
+              <NavLink to={`/category/${'ASTRALIS'}`} onClick={closeMenu}>
                 <SmallCloseIcon marginLeft={"5px"} /> ASTRALIS
-              </Link>
+              </NavLink>
             </li>
             <li className="textMenulist">
-              <Link to={`/category/${'NAVI'}`} onClick={closeMenu}>
+              <NavLink to={`/category/${'NAVI'}`} onClick={closeMenu}>
                 <SmallCloseIcon marginLeft={"5px"} /> NAVI
-              </Link>
+              </NavLink>
             </li>
             <li className="textMenulist">
-              <Link to={`/category/${'G2'}`} onClick={closeMenu}>
+              <NavLink to={`/category/${'G2'}`} onClick={closeMenu}>
                 <SmallCloseIcon marginLeft={"5px"} /> G2
-              </Link>
+              </NavLink>
             </li>
             <hr className="" />
             <li className="textMenu">
-              <Link to={"/cart"} onClick={closeMenu}>
-                Cart
-              </Link>
+              <NavLink to={"/cart"} onClick={closeMenu}>
+                CART
+              </NavLink>
             </li>
-            <li className=""><a href="#" className="text-decoration-none px-3 py-2 d-block"><i className="bi bi-newspaper px-2"></i>Novedades</a></li>
+            <li className="textMenu">
+              <NavLink to={"/contact/"} onClick={closeMenu}>
+              <ChatIcon w={4} h={4} marginLeft={"10px"} marginBottom={"4px"} /> CONTACT
+              </NavLink>
+            </li>
           </ul>
         </div>
         <Spacer />

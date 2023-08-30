@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom'
 const CartWidget = () => {
   const [cart, setCart] = useContext(CartContext);
 
+  // Control de cantidad de items en el carrito para inidcarle al CartWidget si debe mostrarse o quedarse oculto.
+
   const quantity = cart.reduce((acc, current) => {
     return acc + current.quantity;
   }, 0);
