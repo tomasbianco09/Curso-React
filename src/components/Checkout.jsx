@@ -1,8 +1,6 @@
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
 import { useState, useContext } from "react"
 import { CartContext } from '../context/CartProvider'
-import { Button, ButtonGroup, IconButton } from '@chakra-ui/react';
-import { AddIcon, MinusIcon } from '@chakra-ui/icons'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
@@ -14,6 +12,10 @@ const Checkout = () => {
     const [emailError, setEmailError] = useState('');
     const [orderId, setOrderId] = useState(null)
     const db = getFirestore()
+
+    const clearCart = () => {
+        setCart([]);
+    }
 
     // En esta linea validamos el email para que se coloque de forma correcta.
 

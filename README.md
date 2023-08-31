@@ -3,26 +3,25 @@
 ### Comision 47120
 ### Noir Store
 
-#### De que se trata NoirStore?
-Noir Store es un proyecto de estudio de React JS en CoderHouse, se trata de un ecommerce enfocado en la venta de ropa, con items filtrados por categoria.
-
 #### Preview: 
-![GifTechVibes](./src/assets/NoirStore.gif)
+![GifTechVibes](./src/assets/NoirStore.mp4)
 
-### Objetivos.
+#### De que se trata NoirStore?
+Es un proyecto de e-commerce desarrollado con React, cuenta con una base de datos en FIREBASE y se complementa con un conjunto de biobliotecas UI. Este proyecto fue realizado con: `npm create vite@latest`.
 
-* Deberás desarrollar la navegabilidad básica de la aplicación, demostrando que la app permite ver el catálogo, y navegar a un detalle.
+### Uso correcto:
 
+ - Para instalar las dependecias e iniciar el proyecto correctamente debe escribir en la consola: `npm install`
+ - Y luego para iniciar en el proyecto ejecutar: `npm run dev`
+ - Ir a http://localhost:5173/
 
-### Consignas a entregar:
-##### Rutas a configurar
-* ‘/’ navega a 'ItemListContainer' ✔
-* ‘/category/:id’  'ItemListContainer' ✔
-* ‘/item/:id’ navega a 'ItemDetailContainer' ✔
-##### Links a configurar
-* Clickear en el brand debe navegar a ‘/’ ✔
-* Clickear un Item.js debe navegar a /item/:id ✔
-* Clickear en una categoría del navbar debe navegar a /category/:categoryId ✔
-
+### Biblitecas usadas e instalacion:
+* npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+* npm i @chakra-ui/icons
+* npm i react-dom
+* npm i react-router-dom
+* npm i react-toastify
+* sweetalert2
+* npm install firebase
 
 [Linkedin](https://www.linkedin.com/in/facundo-bianco-2625ab248/)

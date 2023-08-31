@@ -1,12 +1,9 @@
 import React from 'react'
-import { Flex, Box, Spacer } from "@chakra-ui/react"
+import { Flex, Box, Spacer, Img } from "@chakra-ui/react"
 import { useState } from 'react'
-import { SmallCloseIcon, ChatIcon, StarIcon } from '@chakra-ui/icons'
-import { Link, NavLink  } from 'react-router-dom'
+import { SmallCloseIcon } from '@chakra-ui/icons'
+import { Link, NavLink } from 'react-router-dom'
 import CartWidget from './CartWidget'
-import astralis from '../assets/img/astralis.png'
-import navi from '../assets/img/navi.png'
-import g2 from '../assets/img/g2.webp'
 import brand from '../assets/img/logo.png'
 
 const NavBar = () => {
@@ -35,7 +32,7 @@ const NavBar = () => {
           <ul className="menu__box">
             <li className="textMenu">
               <NavLink to={"/"} onClick={closeMenu}>
-                <StarIcon  w={4} h={4} marginLeft={"10px"} marginBottom={"4px"} /> HOME
+                <span>HOME</span>
               </NavLink >
             </li>
             <li className="textMenulist ">
@@ -61,12 +58,12 @@ const NavBar = () => {
             <hr className="" />
             <li className="textMenu">
               <NavLink to={"/cart"} onClick={closeMenu}>
-                CART
+                <span>CART</span>
               </NavLink>
             </li>
             <li className="textMenu">
               <NavLink to={"/contact/"} onClick={closeMenu}>
-              <ChatIcon w={4} h={4} marginLeft={"10px"} marginBottom={"4px"} /> CONTACT
+                <span>CONTACT</span>
               </NavLink>
             </li>
           </ul>

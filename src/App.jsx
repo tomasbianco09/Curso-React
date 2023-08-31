@@ -1,5 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Cart from './components/Cart'
@@ -8,7 +10,7 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import Footer from './components/Footer'
 import { CartProvider } from './context/CartProvider'
 import Checkout from './components/Checkout'
-import Cont from './components/Cont'
+import Contact from './components/Contact'
 
 const App = () => {
 
@@ -25,12 +27,14 @@ const App = () => {
           <Route exact path="/category/:category" element={<ItemListContainer />} />
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route exact path="/checkout/" element={<Checkout />} />
-          <Route exact path="/contact/" element={<Cont />} />
+          <Route exact path="/contact/" element={<Contact />} />
 
 
         </Routes>
         <Footer/>
         </CartProvider>
+        <ToastContainer />
+
       </BrowserRouter>
     </>
   )

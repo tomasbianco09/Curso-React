@@ -10,7 +10,7 @@ const ItemListContainer = () => {
   const { category } = useParams()
   const [loading, setLoading] = useState(true)
   const [elementos, setElementos] = useState([])
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([])
 
   // Obtener una colección de productos desde Firebase Firestore, ordenarlos alfabéticamente por el nombre y establecer los datos de esos productos en el estado del componente. Los datos se procesan para incluir el ID del documento junto con los datos del producto.
 
@@ -46,7 +46,7 @@ const ItemListContainer = () => {
   return (
     <>
       <section className="tittleColections">
-        <h2>{category}</h2>
+        <h2>{category ? category : 'ALL PRODUCTS'}</h2>
       </section>
       <div className="container-lg">
 

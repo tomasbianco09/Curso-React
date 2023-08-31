@@ -85,6 +85,11 @@ const Cart = () => {
       <div className="container-lg">
         <div className="cart-view">
           <div className="cart">
+            <div className='cart-shopping'>
+              <Link to='/'>
+                <button>Continue shopping</button>
+              </Link>
+            </div>
             {cart.map((item) => {
               return (
                 <ul className="cart-items" key={item.id}>
@@ -97,7 +102,7 @@ const Cart = () => {
                     </div>
                     <ButtonGroup className='botones-cart' size='sm' isAttached variant='outline'>
                       <IconButton aria-label='Add to friends' onClick={() => decreaseQuantity(item)} icon={<MinusIcon />} />
-                      <Button onClick={() => removeItem(item.id)}><h4>Delete</h4></Button>
+                      <Button onClick={() => removeItem(item.id)}>Delete</Button>
                       <IconButton aria-label='Add to friends' onClick={() => increaseQuantity(item)} icon={<AddIcon />} />
                     </ButtonGroup>
                   </li>

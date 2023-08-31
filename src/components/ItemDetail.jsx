@@ -8,8 +8,6 @@ const ItemDetail = ({ ropa }) => {
     const { id } = useParams();
     const [producto, setProducto] = useState([]);
 
-    // Cargar datos de un documento especifico en Firebase Firestore y establecer esos datos en el estado del componente.
-
     useEffect(() => {
         const db = getFirestore();
 
@@ -23,8 +21,6 @@ const ItemDetail = ({ ropa }) => {
             }
         });
     }, []);
-
-    //Filtramos los productos por su ID.
 
     const filteredProducts = ropa.filter((producto) => producto.id == id)
 
