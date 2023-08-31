@@ -24,4 +24,8 @@ Es un proyecto de e-commerce desarrollado con React, cuenta con una base de dato
 * sweetalert2
 * npm install firebase
 
+Para una mejor experiencia podes visitar la pagina en este link  👇
+
+[NoirSports](https://noiresports.netlify.app/)
+
 [Linkedin](https://www.linkedin.com/in/facundo-bianco-2625ab248/)
