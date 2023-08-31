@@ -4,7 +4,7 @@
 ### Noir Store
 
 #### Preview: 
-![GifTechVibes](./src/assets/NoirStore.mp4)
+![GifTechVibes](./src/assets/NoirStore.gif)
 
 #### De que se trata NoirStore?
 Es un proyecto de e-commerce desarrollado con React, cuenta con una base de datos en FIREBASE y se complementa con un conjunto de biobliotecas UI. Este proyecto fue realizado con: `npm create vite@latest`.
