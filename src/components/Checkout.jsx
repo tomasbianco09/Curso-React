@@ -13,6 +13,11 @@ const Checkout = () => {
     const [orderId, setOrderId] = useState(null)
     const db = getFirestore()
 
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString();
+    const formattedTime = currentDate.toLocaleTimeString();
+    
+
     const clearCart = () => {
         setCart([]);
     }
@@ -78,7 +83,9 @@ const Checkout = () => {
 
     const order = {
         buyer: { name, last, email },
-        items: { compraFinal }
+        items: { compraFinal },
+        buydate: { formattedDate, formattedTime }
+
     }
 
     const ordersCollection = collection(db, "orden")
@@ -95,17 +102,17 @@ const Checkout = () => {
                             <h2>PERSONAL INFORMATION</h2>
                             <div className='personal-inf'>
                                 <div className="textInputWrapper">
-                                    <input placeholder="First" type="text" className="textInput" value={name} onChange={(e) => setName(e.target.value)} />
+                                    <input placeholder="First" id="nombre" type="text" className="textInput" value={name} onChange={(e) => setName(e.target.value)} />
                                 </div>
                                 <div className="textInputWrapper">
-                                    <input placeholder="Last" type="text" className="textInput" value={last} onChange={(e) => setLast(e.target.value)} />
+                                    <input placeholder="Last" id="apellido" type="text" className="textInput" value={last} onChange={(e) => setLast(e.target.value)} />
                                 </div>
                             </div>
 
                             <h2>CONTACT INFORMATION</h2>
                             <div className='personal-inf'>
                                 <div className="textInputWrapper">
-                                    <input placeholder="Email" type="text" className="textInput" value={email} onChange={(e) => {
+                                    <input placeholder="Email" id="email" type="email" className="textInput" value={email} onChange={(e) => {
                                         setEmail(e.target.value);
                                         setEmailError('');
                                     }} />
