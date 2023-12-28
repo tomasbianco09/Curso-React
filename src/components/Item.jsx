@@ -5,6 +5,7 @@ const Item = ({ nombre, description, id, image, precio }) => {
     return (
         <>
             <div className='card'>
+            <Link to={`/item/${id}`}>
                 <div className='product-image'>
                     <img src={image} alt="" />
                 </div>
@@ -12,11 +13,11 @@ const Item = ({ nombre, description, id, image, precio }) => {
                     <h4>{nombre}</h4>
                     <p>$ {precio}</p>
                 </div>
-                <Link to={`/item/${id}`}>
-                    <button className='btn-p'>
-                        <h2>Details</h2>
-                    </button>
-                </Link>
+                
+                <button className='btn-p'>
+                    <h2>Details</h2>
+                </button>
+            </Link>
             </div>
         </>
     )
