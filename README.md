@@ -23,6 +23,8 @@ Es un proyecto de e-commerce desarrollado con React, cuenta con una base de dato
 * npm i react-toastify
 * sweetalert2
 * npm install firebase
+* npm i framer-motion
+
 
 Para una mejor experiencia podes visitar la pagina en este link  👇
 
