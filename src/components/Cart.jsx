@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { CartContext } from '../context/CartProvider'
 import { Link } from 'react-router-dom';
 import { Button, ButtonGroup, IconButton } from '@chakra-ui/react';
@@ -7,6 +7,12 @@ import Swal from 'sweetalert2';
 
 const Cart = () => {
   const [cart, setCart, totalCompra, impuesto, totalConImpuesto] = useContext(CartContext);
+
+  // Scroll al principio de la página cuando se monta o actualiza el componente
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Controlamos que cuando el cart este vacio nos muestre una pagina donde nos deje seguir comprando.
 

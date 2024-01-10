@@ -31,10 +31,10 @@ export const CartProvider = ({children}) => {
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart));
     }, [cart]);
-   
+
     return(
 
-        <CartContext.Provider value={[cart, setCart, totalCompra, impuesto, totalConImpuesto ]}>
+        <CartContext.Provider value={[cart, setCart, totalCompra, impuesto, totalConImpuesto]}>
             {children}
         </CartContext.Provider>
     )

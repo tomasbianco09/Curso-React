@@ -3,6 +3,8 @@ import React from 'react'
 import { useContext } from "react";
 import { CartContext } from '../context/CartProvider';
 import { Link } from 'react-router-dom'
+import 'boxicons'
+
 
 const CartWidget = () => {
   const [cart, setCart] = useContext(CartContext);
@@ -17,7 +19,7 @@ const CartWidget = () => {
     <Flex>
         <Link to={'/cart'} style={{display: quantity > 0 ? 'block' : 'none'}}>
           <Box>
-          <span className="material-symbols-outlined"> shopping_cart </span>
+            <i className='bx bx-basket bx-sm'></i>
           </Box>
         </Link>
           <Spacer/>

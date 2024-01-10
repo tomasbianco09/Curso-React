@@ -32,6 +32,14 @@
 
 /* Fin NavBar */
 
+/* CartWidget */
+
+.bx {
+    margin-right: 5px;
+}
+
+/* Fin CartWidget*/
+
 /*  Menu Hamburguesa */
 
 #menu__toggle {
@@ -1080,7 +1088,6 @@
     position: absolute;
     pointer-events: none;
     bottom: -1px;
-    z-index: 4;
     width: 100%;
 }
 

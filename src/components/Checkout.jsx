@@ -1,5 +1,5 @@
 import { collection, addDoc, getFirestore } from 'firebase/firestore'
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { CartContext } from '../context/CartProvider'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
@@ -21,6 +21,11 @@ const Checkout = () => {
     const clearCart = () => {
         setCart([]);
     }
+
+    useEffect(() => {
+        // Scroll al principio de la página cuando se monta o actualiza el componente
+        window.scrollTo(0, 0);
+      }, []);
 
     // En esta linea validamos el email para que se coloque de forma correcta.
 

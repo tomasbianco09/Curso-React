@@ -1,8 +1,9 @@
 import React from 'react'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext  } from "react";
 import { getFirestore, collection, getDocs, query, orderBy } from 'firebase/firestore';
+
 
 import Loading from './Loading'
 
@@ -36,8 +37,8 @@ const ItemListContainer = () => {
       setElementos(filteredProducts)
       setLoading(false)
     }, 3000)
-
-  }, [])
+    window.scrollTo(0, 0);;
+  }, [category, products])
 
   if (loading) {
     return <Loading/>
