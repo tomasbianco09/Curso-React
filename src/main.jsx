@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { ChakraProvider } from '@chakra-ui/react'
+import { getAuth } from "firebase/auth";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -21,6 +22,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase Authentication and get a reference to the service
+export const auth = getAuth(app);
+export default app;
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <ChakraProvider>

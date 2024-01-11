@@ -11,6 +11,8 @@ import Footer from './components/Footer'
 import { CartProvider } from './context/CartProvider'
 import Checkout from './components/Checkout'
 import Contact from './components/Contact'
+import Signup from "./components/Signup";
+import Login from "./components/Login";
 
 const App = () => {
 
@@ -28,7 +30,8 @@ const App = () => {
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route exact path="/checkout/" element={<Checkout />} />
           <Route exact path="/contact/" element={<Contact />} />
-
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
 
         </Routes>
         <Footer/>

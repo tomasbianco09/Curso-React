@@ -5,6 +5,7 @@ import { SmallCloseIcon } from '@chakra-ui/icons'
 import { Link, NavLink } from 'react-router-dom'
 import CartWidget from './CartWidget'
 import brand from '../assets/img/logo.png'
+import LoginWidget from './LoginWidget'
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -76,6 +77,7 @@ const NavBar = () => {
         </div>
         <Spacer />
         <Box p="4" marginTop="1rem">
+          <LoginWidget />
           <CartWidget />
         </Box>
       </Flex>
