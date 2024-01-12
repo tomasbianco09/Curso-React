@@ -1,3 +1,62 @@
+/* Login */
+
+.layoutBody {
+    min-height: 100vh;
+}
+
+
+.layoutContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.tittleLogin {
+    font-weight: 900;
+    font-size: 2.5em;
+    text-align: center;
+    letter-spacing: -.02em;
+    text-transform: uppercase;
+    color: #000;
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.loginText {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 30px;
+}
+
+.textInputWrapper-showPassword {
+    display: flex;
+}
+
+.button--primary {
+    cursor: pointer;
+    border: 0.0476190476em solid transparent;
+    line-height: 1;
+    font-size: 1.3125rem;
+    font-weight: bold;
+    padding: 0.7619047619em 0.8571428571em 0.8095238095em;
+    background-color: black;
+    color: white;
+    outline: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: background-color calc(var(--speed)) var(--easing),border-color calc(var(--speed)) var(--easing),color calc(var(--speed)) var(--easing);
+}
+
+.button--outline {
+    background-color: transparent;
+    border-color: black;
+    color: black;
+}
+
+/* Fin Login */
 
 /* NavBar */
 
@@ -1071,7 +1130,7 @@
 .textInputWrapper {
     position: relative;
     width: 300px;
-    margin: 12px 5px;
+    margin: 40px 5px;
     --accent-color: #000000;
 }
 

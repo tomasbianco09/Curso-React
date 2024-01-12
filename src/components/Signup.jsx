@@ -29,48 +29,58 @@ const Signup = () => {
   };
 
   return (
-    <main>
-      <section>
-        <div>
-          <div>
-            <h1> FocusApp </h1>
-            <form>
-              <div>
-                <label htmlFor="email-address">Email address</label>
-                <input
-                  type="email"
-                  label="Email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  placeholder="Email address"
-                />
-              </div>
+    <>
+      <main className='layoutBody'>
+        <div className='layoutContainer'>
+          <section className='formContainer'>
+            <div className="tittleLogin">
+              <h2>Sign Up</h2>
+            </div>
+            <div>
+              <form>
+                <div className="textInputWrapper">
+                  <input
+                    id="email-address"
+                    name="email"
+                    type="email"
+                    className="textInput"
+                    required
+                    placeholder="Email address"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  label="Create password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  placeholder="Password"
-                />
-              </div>
+                <div className="textInputWrapper ">
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    className="textInput"
+                    required
+                    placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
 
-              <button type="submit" onClick={onSubmit}>
-                Sign up
-              </button>
-            </form>
+                <div>
+                  <button className='button--primary' type="submit" onClick={onSubmit}>Sign up</button>
+                </div>
+              </form>
+      
+              <p className="loginText">
+                Already have an account?
+              </p>
+              <p >
+                <NavLink to="/login">
+                  <button className='button--primary button--outline'>Sign in</button>
+                </NavLink>
+              </p>
+            </div>
 
-            <p>
-              Already have an account? <NavLink to="/login">Sign in</NavLink>
-            </p>
-          </div>
+          </section>
         </div>
-      </section>
-    </main>
+      </main>
+    </>
   );
 };
 

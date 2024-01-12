@@ -76,7 +76,7 @@ const NavBar = () => {
           </Link>
         </div>
         <Spacer />
-        <Box p="4" marginTop="1rem">
+        <Box p="4" marginTop="1rem" display="flex">
           <LoginWidget />
           <CartWidget />
         </Box>
