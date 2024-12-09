@@ -25,7 +25,7 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (!validateEmail(email)) {
-            setEmailError('Por favor, ingresa una dirección de correo electrónico válida.');
+            setEmailError('Please enter a valid email address.');
             return;
         }
 
@@ -37,9 +37,9 @@ const Contact = () => {
             setAsk("");
             Swal.fire({
                 icon: 'success',
-                title: 'Consulta realizada',
-                text: `En breve nos pondremos en contacto. Nro ticket de contacto: ${id}`,
-                confirmButtonText: 'Gracias',
+                title: 'Query submitted.',
+                text: `We will contact you shortly. Contact ticket number: ${id}`,
+                confirmButtonText: 'Thanks you',
             });
         });
     }

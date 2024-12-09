@@ -40,7 +40,7 @@ const Checkout = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (!validateEmail(email)) {
-            setEmailError('Por favor, ingresa una dirección de correo electrónico válida.');
+            setEmailError('Please enter a valid email address.');
             return;
         }
 
@@ -51,9 +51,9 @@ const Checkout = () => {
             clearCart();
             Swal.fire({
                 icon: 'success',
-                title: 'Compra finalizada',
-                text: `Gracias por tu compra! Número de orden: ${id}`,
-                confirmButtonText: 'Gracias',
+                title: 'Purchase completed.',
+                text: `Thank you for your purchase! Order number: ${id}`,
+                confirmButtonText: 'Thanks you',
             });
         });
     }
@@ -63,11 +63,11 @@ const Checkout = () => {
     if (cart.length === 0) {
         return (
             <div className='no-items'>
-                <h1>Muchas gracias por tu compra!</h1>
+                <h1>Thank you for your purchase!</h1>
 
                 <Link to='/' className='Option'>
                     <button>
-                        Regresar al menu
+                        Return to menu
                     </button>
                 </Link>
             </div>
