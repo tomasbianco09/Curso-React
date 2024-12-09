@@ -63,7 +63,7 @@ const Checkout = () => {
     if (cart.length === 0) {
         return (
             <div className='no-items'>
-                <h1>Thank you for your purchase!</h1>
+                <h1>Thanks you for your purchase!</h1>
 
                 <Link to='/' className='Option'>
                     <button>
